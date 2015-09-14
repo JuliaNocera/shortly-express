@@ -157,7 +157,7 @@ describe('', function() {
         // save a link to the database
         link = new Link({
           url: 'http://roflzoo.com/',
-          title: 'Funny animal pictures, funny animals, funniest dogs',
+          title: 'Funny pictures of animals, funny dog pictures',
           base_url: 'http://127.0.0.1:4568'
         });
         link.save().then(function(){
@@ -202,7 +202,7 @@ describe('', function() {
         };
 
         requestWithSession(options, function(error, res, body) {
-          expect(body).to.include('"title":"Funny animal pictures, funny animals, funniest dogs"');
+          expect(body).to.include('"title":"Funny pictures of animals, funny dog pictures"');
           expect(body).to.include('"code":"' + link.get('code') + '"');
           done();
         });
